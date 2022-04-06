@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Sora', sans-serif; }
+
+.header {
+  min-height: 10vh;
+  width: 100%; }
+  .header .nav {
+    min-height: 10vh;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #313132; }
+    .header .nav a img {
+      width: 25px; }
+
+.mainIndex {
+  min-height: 80vh; }
+  .mainIndex .mainBody {
+    width: 80%;
+    margin: 10vh auto;
+    text-align: center; }
+    .mainIndex .mainBody .h1 {
+      font-weight: bold; }
+
+.footer {
+  min-height: 10vh;
+  background-color: #313132; }
