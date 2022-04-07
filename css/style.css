@@ -1,4 +1,4 @@
-.mpReset, .mainIndex .mainBody .row .productCard {
+.mpReset, .mainIndex .mainBody .rowCard .productCard, .mainIndex .mainBody .rowButton .col {
   margin: 0;
   padding: 0; }
 
@@ -40,37 +40,57 @@ body {
       font-weight: bold; }
     .mainIndex .mainBody .h2 {
       margin: 5vh 0 10vh 0; }
-    .mainIndex .mainBody .row {
+    .mainIndex .mainBody .rowCard {
       justify-content: center; }
-      .mainIndex .mainBody .row .productCard {
+      .mainIndex .mainBody .rowCard .productCard {
         height: 40vh;
         width: 250px;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
-        border: 1px solid black; }
-        .mainIndex .mainBody .row .productCard .productImgContainer {
+        border: 1px solid gray; }
+        .mainIndex .mainBody .rowCard .productCard .productImgContainer {
           height: 70%;
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center; }
-          .mainIndex .mainBody .row .productCard .productImgContainer .productImg {
+          .mainIndex .mainBody .rowCard .productCard .productImgContainer .productImg {
             width: 45%; }
-        .mainIndex .mainBody .row .productCard .productButton {
+        .mainIndex .mainBody .rowCard .productCard .linkToP {
           width: 100%;
-          height: 30%;
-          background-color: #303030;
-          color: white;
-          transition: background-color 0.5s; }
-        .mainIndex .mainBody .row .productCard .productButton:hover {
-          background-color: black; }
+          height: 30%; }
+          .mainIndex .mainBody .rowCard .productCard .linkToP .productButton {
+            width: 100%;
+            height: 100%;
+            background-color: #303030;
+            color: white;
+            transition: background-color 0.5s; }
+          .mainIndex .mainBody .rowCard .productCard .linkToP .productButton:hover {
+            background-color: black; }
+    .mainIndex .mainBody .rowButton {
+      width: 50%;
+      margin: 0 auto; }
+      .mainIndex .mainBody .rowButton .col .button {
+        padding: 25px 100px;
+        margin: 5vh 0;
+        background-color: #303030;
+        color: white;
+        transition: background-color 0.5s; }
+      .mainIndex .mainBody .rowButton .col .button:hover {
+        background-color: black; }
+    .mainIndex .mainBody .p {
+      margin: 10vh 0; }
 
 @media (max-width: 907px) {
-  .row {
+  .mainIndex .mainBody .rowCard {
     flex-direction: column;
     align-items: center; } }
+
+@media (max-width: 1150px) {
+  .mainIndex .mainBody .rowButton {
+    width: 100%; } }
 
 .footer {
   min-height: 8vh;
