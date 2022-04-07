@@ -1,3 +1,7 @@
+.mpReset, .mainIndex .mainBody .row .productCard {
+  margin: 0;
+  padding: 0; }
+
 * {
   margin: 0;
   padding: 0;
@@ -21,14 +25,53 @@ body {
       width: 25px; }
 
 .mainIndex {
-  min-height: 80vh; }
+  min-height: 82vh; }
+  .mainIndex .mainHeader {
+    width: 80%;
+    margin: 10vh auto;
+    text-align: center; }
+    .mainIndex .mainHeader .h1 {
+      font-weight: bold; }
   .mainIndex .mainBody {
     width: 80%;
     margin: 10vh auto;
     text-align: center; }
     .mainIndex .mainBody .h1 {
       font-weight: bold; }
+    .mainIndex .mainBody .h2 {
+      margin: 5vh 0 10vh 0; }
+    .mainIndex .mainBody .row {
+      justify-content: center; }
+      .mainIndex .mainBody .row .productCard {
+        height: 40vh;
+        width: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        border: 1px solid black; }
+        .mainIndex .mainBody .row .productCard .productImgContainer {
+          height: 70%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center; }
+          .mainIndex .mainBody .row .productCard .productImgContainer .productImg {
+            width: 45%; }
+        .mainIndex .mainBody .row .productCard .productButton {
+          width: 100%;
+          height: 30%;
+          background-color: #303030;
+          color: white;
+          transition: background-color 0.5s; }
+        .mainIndex .mainBody .row .productCard .productButton:hover {
+          background-color: black; }
+
+@media (max-width: 907px) {
+  .row {
+    flex-direction: column;
+    align-items: center; } }
 
 .footer {
-  min-height: 10vh;
+  min-height: 8vh;
   background-color: #313132; }
