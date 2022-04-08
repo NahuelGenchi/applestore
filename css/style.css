@@ -1,4 +1,4 @@
-.mpReset, .mainIndex .mainBody .rowCard .productCard, .mainIndex .mainBody .rowButton .col {
+.mpReset, .mainIndex .mainBody .rowCard .productCard {
   margin: 0;
   padding: 0; }
 
@@ -70,27 +70,19 @@ body {
           .mainIndex .mainBody .rowCard .productCard .linkToP .productButton:hover {
             background-color: black; }
     .mainIndex .mainBody .rowButton {
-      width: 50%;
-      margin: 0 auto; }
-      .mainIndex .mainBody .rowButton .col .button {
-        padding: 25px 100px;
-        margin: 5vh 0;
-        background-color: #303030;
-        color: white;
-        transition: background-color 0.5s; }
-      .mainIndex .mainBody .rowButton .col .button:hover {
-        background-color: black; }
+      display: flex;
+      justify-content: center; }
+      .mainIndex .mainBody .rowButton .colRow {
+        margin: 5vh 5vw; }
+        .mainIndex .mainBody .rowButton .colRow .button {
+          padding: 10px 25px; }
     .mainIndex .mainBody .p {
-      margin: 10vh 0; }
+      margin: 8vh 0; }
 
 @media (max-width: 907px) {
   .mainIndex .mainBody .rowCard {
     flex-direction: column;
     align-items: center; } }
-
-@media (max-width: 1150px) {
-  .mainIndex .mainBody .rowButton {
-    width: 100%; } }
 
 .footer {
   min-height: 8vh;

@@ -56,24 +56,17 @@
             }
         }
         .rowButton {
-            width: 50%;
-            margin: 0 auto;
-            .col {
-                @extend .mpReset;
+            display: flex;
+            justify-content: center;
+            .colRow {
+                margin: 5vh 5vw;
                 .button {
-                    padding: 25px 100px;
-                    margin: 5vh 0;
-                    background-color: rgb(48, 48, 48);
-                    color: white;
-                    transition: background-color 0.5s;
-                }
-                .button:hover {
-                    background-color: black;
+                    padding: 10px 25px;
                 }
             }
         }
         .p {
-            margin: 10vh 0;
+            margin: 8vh 0;
         }
     }
 }
@@ -84,16 +77,6 @@
             .rowCard {
                 flex-direction: column;
                 align-items: center;
-            }
-        }
-    }
-}
-
-@media (max-width: 1150px) {
-    .mainIndex {
-        .mainBody {
-            .rowButton {
-                width: 100%;
             }
         }
     }
