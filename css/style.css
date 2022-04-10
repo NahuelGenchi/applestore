@@ -1,4 +1,4 @@
-.mpReset, .mainIndex .mainBody .rowCard .productCard {
+.mpReset, .mainIndex .mainBody .rowCard .productCard, .footer p {
   margin: 0;
   padding: 0; }
 
@@ -86,4 +86,11 @@ body {
 
 .footer {
   min-height: 8vh;
-  background-color: #313132; }
+  background-color: #313132;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .footer p {
+    text-align: center;
+    color: white;
+    font-size: 12px; }

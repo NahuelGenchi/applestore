@@ -1,4 +1,13 @@
 .footer {
     min-height: 8vh;
     background-color: #313132;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+        @extend .mpReset;
+        text-align: center;
+        color: white;
+        font-size: 12px;
+    }
 }

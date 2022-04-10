@@ -32,6 +32,7 @@ macbook.onclick = function() {
     if (clicks === 1) {
         installmentsAskFunction();
     }
+    localStorage.setItem('product', `${product.name}`);
 }
 ipad.onclick = function() {
     product = products[1];
@@ -40,6 +41,7 @@ ipad.onclick = function() {
     if (clicks === 1) {
         installmentsAskFunction();
     }
+    localStorage.setItem('product', `${product.name}`);
 }
 iphone.onclick = function() {
     product = products[2];
@@ -48,6 +50,7 @@ iphone.onclick = function() {
     if (clicks === 1) {
         installmentsAskFunction();
     }
+    localStorage.setItem('product', `${product.name}`);
 }
 
 function installmentsAskFunction() {
@@ -81,10 +84,12 @@ function installmentsAskFunction() {
         document.querySelector("#mainBody").appendChild(h3InstallmentsAsk);
         h3InstallmentsAsk.innerText = "How many installments would you like?";
         installmentsFunction();
+        localStorage.setItem('installments', true);
     };
     installmentsNo.onclick = function() {
         document.querySelector("#mainBody").appendChild(pInstallmentsAsk);
         pInstallmentsAsk.innerText = `You will have to pay $${product.price} in one payment.`;
+        localStorage.setItem('installments', false);
     };
 };
 
@@ -118,23 +123,26 @@ function installmentsFunction() {
     pInstallmentsNumber.setAttribute("class", "p");
     let pInstallmentsCalc = document.createElement("p");
     pInstallmentsCalc.setAttribute("class", "p");
-    function installmentsCalcFunction() {
-        installmentsCalc = product.price / installmentsNumber;
-        document.querySelector("#mainBody").appendChild(pInstallmentsNumber);
-        pInstallmentsNumber.innerText = `You have chosen ${installmentsNumber} installments.`;
-        document.querySelector("#mainBody").appendChild(pInstallmentsCalc);
-        pInstallmentsCalc.innerText = `You will have to pay ${installmentsNumber} installments of $${installmentsCalc}`;
-    }
     installments6.onclick = function() {
         installmentsNumber = 6;
         installmentsCalcFunction();
+        localStorage.setItem('installmentsNumber', installmentsNumber);
     }
     installments9.onclick = function() {
         installmentsNumber = 9;
         installmentsCalcFunction();
+        localStorage.setItem('installmentsNumber', installmentsNumber);
     }
     installments12.onclick = function() {
         installmentsNumber = 12;
         installmentsCalcFunction();
+        localStorage.setItem('installmentsNumber', installmentsNumber);
+    }
+    function installmentsCalcFunction() {
+        installmentsCalc = Math.round(product.price / installmentsNumber);
+        document.querySelector("#mainBody").appendChild(pInstallmentsNumber);
+        pInstallmentsNumber.innerText = `You have chosen ${installmentsNumber} installments.`;
+        document.querySelector("#mainBody").appendChild(pInstallmentsCalc);
+        pInstallmentsCalc.innerText = `You will have to pay ${installmentsNumber} installments of $${installmentsCalc}`;
     }
 };
