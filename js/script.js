@@ -12,32 +12,19 @@ let phone = {
 }
 let products = [laptop, tablet, phone];
 let product;
-
 let macbook = document.querySelector("#macbook");
 let ipad = document.querySelector("#ipad");
 let iphone = document.querySelector("#iphone");
-
 let productPriceElement = document.querySelector("#productPriceText");
-
-macbook.onclick = function() {
-    product = products[0];
+function productFunction(numproduct) {
+    product = products[numproduct];
     productPriceElement.innerText = `You have chosen the ${product.name}. The price is $${product.price}`;
     installmentsAskFunction();
     localStorage.setItem('product', `${product.name}`);
 }
-ipad.onclick = function() {
-    product = products[1];
-    productPriceElement.innerText = `You have chosen the ${product.name}. The price is $${product.price}`;
-    installmentsAskFunction();
-    localStorage.setItem('product', `${product.name}`);
-}
-iphone.onclick = function() {
-    product = products[2];
-    productPriceElement.innerText = `You have chosen the ${product.name}. The price is $${product.price}`;
-    installmentsAskFunction();
-    localStorage.setItem('product', `${product.name}`);
-}
-
+macbook.onclick = ()=>{productFunction(0);};
+ipad.onclick = ()=>{productFunction(1);};
+iphone.onclick = ()=>{productFunction(2);};
 function installmentsAskFunction() {
     let h3 = document.querySelector("#installmentsAsk");
     h3.innerText = "Would you like to pay in installments?";
@@ -69,7 +56,6 @@ function installmentsAskFunction() {
         localStorage.setItem('installments', false);
     };
 };
-
 function installmentsFunction() {
     let divNumberOptions = document.querySelector("#divNumberOptions");
     divNumberOptions.innerHTML = `
@@ -95,21 +81,14 @@ function installmentsFunction() {
     let installmentsCalc;
     let pInstallmentsNumber = document.querySelector("#pInstallmentsNumber");
     let pInstallmentsCalc = document.querySelector("#pInstallmentsCalc");
-    installments6.onclick = function() {
-        installmentsNumber = 6;
+    function insNumberFunc(num) {
+        installmentsNumber = num;
         installmentsCalcFunction();
         localStorage.setItem('installmentsNumber', installmentsNumber);
     }
-    installments9.onclick = function() {
-        installmentsNumber = 9;
-        installmentsCalcFunction();
-        localStorage.setItem('installmentsNumber', installmentsNumber);
-    }
-    installments12.onclick = function() {
-        installmentsNumber = 12;
-        installmentsCalcFunction();
-        localStorage.setItem('installmentsNumber', installmentsNumber);
-    }
+    installments6.onclick = ()=>{insNumberFunc(6);};
+    installments9.onclick = ()=>{insNumberFunc(9);};
+    installments12.onclick = ()=>{insNumberFunc(12);};
     function installmentsCalcFunction() {
         installmentsCalc = Math.round(product.price / installmentsNumber);
         pInstallmentsNumber.innerText = `You have chosen ${installmentsNumber} installments.`;
