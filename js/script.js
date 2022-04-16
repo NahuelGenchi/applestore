@@ -17,50 +17,32 @@ let macbook = document.querySelector("#macbook");
 let ipad = document.querySelector("#ipad");
 let iphone = document.querySelector("#iphone");
 
-let productPriceElement = document.createElement('p');
-productPriceElement.setAttribute("id", "productPriceText")
-productPriceElement.setAttribute("class", "p")
-
-document.querySelector("#mainBody").appendChild(productPriceElement);
-
-let clicks = 0;
+let productPriceElement = document.querySelector("#productPriceText");
 
 macbook.onclick = function() {
     product = products[0];
     productPriceElement.innerText = `You have chosen the ${product.name}. The price is $${product.price}`;
-    clicks += 1;
-    if (clicks === 1) {
-        installmentsAskFunction();
-    }
+    installmentsAskFunction();
     localStorage.setItem('product', `${product.name}`);
 }
 ipad.onclick = function() {
     product = products[1];
     productPriceElement.innerText = `You have chosen the ${product.name}. The price is $${product.price}`;
-    clicks += 1;
-    if (clicks === 1) {
-        installmentsAskFunction();
-    }
+    installmentsAskFunction();
     localStorage.setItem('product', `${product.name}`);
 }
 iphone.onclick = function() {
     product = products[2];
     productPriceElement.innerText = `You have chosen the ${product.name}. The price is $${product.price}`;
-    clicks += 1;
-    if (clicks === 1) {
-        installmentsAskFunction();
-    }
+    installmentsAskFunction();
     localStorage.setItem('product', `${product.name}`);
 }
 
 function installmentsAskFunction() {
-    let h3 = document.createElement('h3');
-    document.querySelector("#mainBody").appendChild(h3);
+    let h3 = document.querySelector("#installmentsAsk");
     h3.innerText = "Would you like to pay in installments?";
-    let div = document.createElement('div');
-    document.querySelector("#mainBody").appendChild(div);
-    div.setAttribute("class", "rowButton");
-    div.innerHTML = `
+    let divInstallmentsAsk = document.querySelector("#installmentsAskOption")
+    divInstallmentsAsk.innerHTML = `
         <div class='colRow'>
             <a href="#productInstallmentsText">
                 <input id="installmentsYes" class="button" type="button" value="Yes"> 
@@ -73,31 +55,24 @@ function installmentsAskFunction() {
         </div>`;
     let installmentsYes = document.querySelector("#installmentsYes");
     let installmentsNo = document.querySelector("#installmentsNo");
-    let pInstallmentsAsk = document.createElement("p");
-    pInstallmentsAsk.setAttribute("class", "p");
-    pInstallmentsAsk.setAttribute("id", "productInstallmentsText");
+    let pInstallmentsAsk = document.querySelector("#productInstallmentsText");
     let h3InstallmentsAsk;
     installmentsYes.onclick = function() {
-        document.querySelector("#mainBody").appendChild(pInstallmentsAsk);
         pInstallmentsAsk.innerText = "You have chosen installments."
-        h3InstallmentsAsk = document.createElement("h3");
-        document.querySelector("#mainBody").appendChild(h3InstallmentsAsk);
+        h3InstallmentsAsk = document.querySelector("#h3InstallmentsAsk");
         h3InstallmentsAsk.innerText = "How many installments would you like?";
         installmentsFunction();
         localStorage.setItem('installments', true);
     };
     installmentsNo.onclick = function() {
-        document.querySelector("#mainBody").appendChild(pInstallmentsAsk);
         pInstallmentsAsk.innerText = `You will have to pay $${product.price} in one payment.`;
         localStorage.setItem('installments', false);
     };
 };
 
 function installmentsFunction() {
-    let div = document.createElement("div");
-    div.setAttribute("class", "rowButton");
-    document.querySelector("#mainBody").appendChild(div);
-    div.innerHTML = `
+    let divNumberOptions = document.querySelector("#divNumberOptions");
+    divNumberOptions.innerHTML = `
     <div class='colRow'>
         <a href="#pInstallmentsNumber">
             <input id="installments6" class="button" type="button" value="6"> 
@@ -118,11 +93,8 @@ function installmentsFunction() {
     let installments12 = document.querySelector("#installments12");
     let installmentsNumber;
     let installmentsCalc;
-    let pInstallmentsNumber = document.createElement("p");
-    pInstallmentsNumber.setAttribute("id", "pInstallmentsNumber");
-    pInstallmentsNumber.setAttribute("class", "p");
-    let pInstallmentsCalc = document.createElement("p");
-    pInstallmentsCalc.setAttribute("class", "p");
+    let pInstallmentsNumber = document.querySelector("#pInstallmentsNumber");
+    let pInstallmentsCalc = document.querySelector("#pInstallmentsCalc");
     installments6.onclick = function() {
         installmentsNumber = 6;
         installmentsCalcFunction();
@@ -140,9 +112,7 @@ function installmentsFunction() {
     }
     function installmentsCalcFunction() {
         installmentsCalc = Math.round(product.price / installmentsNumber);
-        document.querySelector("#mainBody").appendChild(pInstallmentsNumber);
         pInstallmentsNumber.innerText = `You have chosen ${installmentsNumber} installments.`;
-        document.querySelector("#mainBody").appendChild(pInstallmentsCalc);
         pInstallmentsCalc.innerText = `You will have to pay ${installmentsNumber} installments of $${installmentsCalc}`;
     }
 };
