@@ -10,6 +10,26 @@ let phone = {
     name: "iPhone 13",
     price: 829,
 }
+
+const lista = document.querySelector('#listado')
+
+fetch('/data.json')
+    .then( (res) => res.json())
+    .then( (data) => {
+
+        data.forEach((producto) => {
+            const li = document.createElement('li')
+            li.innerHTML = `
+                <h4>${producto.name}</h4>
+                <p>${producto.price}</p>
+                <hr/>
+            `
+   
+            lista.append(li)
+        })
+    })
+
+
 let products = [laptop, tablet, phone];
 let product;
 let macbook = document.querySelector("#macbook");

@@ -1,0 +1,14 @@
+[
+    {
+        "name": "MacBook Air",
+        "price": 999
+    },
+    {
+        "name": "iPad Air",
+        "price": 599
+    },
+    {
+        "name": "iPhone 13",
+        "price": 829
+    }
+]
